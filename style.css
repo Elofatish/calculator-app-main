@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Outfit:wght@700&family=Poppins:wght@400;500;600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    /* font-size: 32px; */
+    font-family: "League Spartan", serif;
+
+}
+:root{
+    /* // ### Theme 1 */
+
+/* #### Backgrounds */
+/* (main background) */
+--Very-dark-desaturated-blue: hsl(222, 26%, 31%);   
+/* (toggle background, keypad background) */
+ --Very-desaturated-blue : hsl(223, 31%, 20%); 
+ --Very-darkblue : hsl(224, 36%, 15%) ; /*(screen background)*/
+
+/* #### Keys */
+
+--Desaturated-dark-blue : hsl(225, 21%, 49%); /*(key background)*/
+--Desaturatedshadow-dark-blue : hsl(224, 28%, 35%); /*(key shadow)*/
+--Red: hsl(6, 63%, 50%); /*(key background, toggle)*/
+--Dark-red : hsl(6, 70%, 34%);/*(key shadow)*/
+--Light-grayish-orange: hsl(30, 25%, 89%); /* (key background)*/
+--Grayish-orange : hsl(28, 16%, 65%); /*(key shadow)*/
+
+/* #### Text */
+--Very-dark-grayish-blue: hsl(221, 14%, 31%);
+--White: hsl(0, 0%, 100%);
+/* ### Theme 2 */
+
+/* #### Backgrounds */
+
+--Light-gray : hsl(0, 0%, 90%); /*(main background)*/
+--Grayish-red : hsl(0, 5%, 81%) ;/*(toggle background, keypad background)*/
+--Very-light-gray : hsl(0, 0%, 93%) ;/*(screen background)*/
+
+/* #### Keys */
+
+--Dark-moderate-cyan : hsl(185, 42%, 37%); /*(key background)*/
+--Very-dark-cyan : hsl(185, 58%, 25%); /*(key shadow)*/
+--Orange : hsl(25, 98%, 40%);/*(key background, toggle)*/
+--Dark-orange : hsl(25, 99%, 27%); /*(key shadow)*/
+--Light-grayish-yellow : hsl(45, 7%, 89%);/*(key background)*/
+--Dark-grayish-orange : hsl(35, 11%, 61%);/*(key shadow)*/
+/* #### Text */
+--Very-dark-grayish-yellow: hsl(60, 10%, 19%);
+--White : hsl(0, 0%, 100%);/*(text)*/
+/* ### Theme 3
+
+#### Backgrounds */
+--Very-dark-villolet : hsl(268, 75%, 9%); /*(main background)*/
+--Very-dark-violet: hsl(268, 71%, 12%); /* (toggle background, keypad background, screen background)*/
+
+/* #### Keys */
+--Dark-violet : hsl(281, 89%, 26%); /*(key background)*/
+--Vivid-magenta : hsl(285, 91%, 52%);/*(key shadow)*/
+
+--Pure-cyan : hsl(176, 100%, 44%);/*(key background, toggle)*/
+--Soft-cyan : hsl(177, 92%, 70%);/*(key shadow)*/
+
+--Very-violet : hsl(268, 47%, 21%);/*(key background)*/
+--Dark-magenta : hsl(290, 70%, 36%);/*(key shadow)*/
+
+/* #### Text */
+
+--Light-yellow: hsl(52, 100%, 62%);
+--Very-dark-blue: hsl(198, 20%, 13%);
+--White : hsl(0, 0%, 100%);/*(text)*/
+
+}
+body{
+    
+    font-family: "League Spartan", serif;
+    font-weight: 700;
+    font-size: 32px;
+
+    background: var(--Very-dark-desaturated-blue);
+    color: var(--White);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    user-select: none;
+    transition: background 300ms ease-in-out, color 300ms ease-in-out;
+
+}
+body.active1{
+    background-color: var(--Light-gray);
+}
+body.active1 .keypad-container{
+    background-color: var(--Grayish-red);
+
+}
+body.active2{
+    background-color:var(--Very-dark-villolet) ;
+}
+body.active1 .calc-header .logo{
+    color: hsl(0, 0%, 0%);
+}
+body.active1 .theme-number{
+    color: black;
+}
+body.active2 .calc-header .logo{
+    color: var(--Light-yellow);
+}
+body.active1 .theme-container span{
+    color: hsl(0, 0%, 7%);
+}
+
+body.active2 .theme-container span{
+    color: var(--Light-yellow);
+}
+body.active2 .theme-number span{
+    color: var(--Light-yellow);
+}
+body.active1 #circle{
+    background-color: var(--Light-gray);
+    color: hsl(0, 0%, 7%);
+}
+body.active2 #circle{
+    background-color: var(--Very-dark-violet);
+    color:var(--Light-yellow) ;
+    margin-left: 75%;
+}
+body.active1 button{
+    box-shadow: 0 3px 0 0 var(--Dark-grayish-orange);
+}
+body.active1 .display{
+    background-color: var(--Very-light-gray);
+}
+body.active2 .display{
+    background-color: hsl(268, 71%, 12%);
+}
+body.active1 .result{
+    color: black;
+    font-weight: 700;
+    font-family: "League Spartan", serif;
+   
+}
+body.active2 .result{
+    color: var(--Light-yellow);
+    font-weight: 700;
+    font-family: "League Spartan", serif;
+}
+
+body.active2 button{
+    box-shadow: 0 3px 0 0 var(--Very-violet);
+    background-color: var(--Dark-magenta);
+    color: var(--Light-yellow);
+}
+body.active2 .keypad-container{
+    background-color: var(--Very-dark-violet);
+}
+body.active1 .delet-btn,
+body.active1 .reset-btn{
+    box-shadow: 0 3px 0 0 var(--Dark-grayish-orange);
+    background-color: var(--Dark-moderate-cyan); 
+}
+body.active2 .delet-btn,
+body.active2 .reset-btn{
+    box-shadow: 0 3px 0 0 var(----Dark-magenta);
+    background-color: var(--Very-violet);
+
+}
+body.active1 .equal-btn{
+    box-shadow: 0 3px 0 0 var(--Dark-orange);
+    background-color: var(--Orange);
+}
+body.active2 .equal-btn{
+    box-shadow: 0 3px 0 0 var(--Soft-cyan);
+    background-color: var(--Pure-cyan);
+    color: #fff;
+}
+body.active1 .theme-option{
+    background-color: var(--Grayish-red);
+}
+body.active2 .theme-option{
+    background-color: var(--Pure-cyan);
+}
+body.active1 #circle{
+    background-color: var(--Orange);
+    margin-left: 36%;
+}
+
+
+main{
+    margin-top: 100px;
+}
+
+.calculator{
+    width: 100%;
+    max-width: 500px;
+    padding: 24px;
+}
+.calc-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 32px;
+}
+.logo{
+    letter-spacing: -0.01em;
+}
+.theme-toggle{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: end;
+}
+.theme-number{
+    display: flex;
+    gap: 16px;
+    padding: 0 6px;
+    cursor: pointer;
+
+}
+.theme-number span{
+    font-size: 16px;
+}
+.theme-container{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.theme-container span{
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+}
+.theme-option{
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    width: 70px;
+    border-radius: 12px;
+    background: var(--Very-desaturated-blue);
+    transition: background 300ms ease-in-out;
+}
+#circle{
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--Orange);
+    border-radius: 100%;
+    background: var(--Orange);
+    transition: background 300ms ease-in-out;
+    cursor: pointer;
+}
+ 
+
+#circle:hover{
+    background: var(--Dark-orange);
+
+}
+.display{
+    
+    background: var(--Very-darkblue);
+    border-radius: 12px;
+    padding: 36px 32px 32px;
+    margin-bottom: 24px;
+    transition: background 300ms ease-in-out;
+}
+.result{
+    font-weight: 700;
+    color: var(--White);
+    text-align: right;
+    font-size: 50px;
+    letter-spacing: 1px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    cursor: auto;
+    font-family: "League Spartan", serif;
+}
+.keypad-container{
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 28px 24px;
+    background:var(--Very-desaturated-blue) ;
+    border-radius: 12px;
+    padding: 32px;
+    transition: background 300ms ease-in-out;
+}
+.keypad-container button{
+    border-radius: 10px;
+    transition: background 300ms ease-in-out;  
+    
+
+}
+.keypad-container button:active{
+    transform: translate(5px);
+    box-shadow: 0 0 0 0 transparent;
+    transition: transform 100ms ease-in, boxshadow ease-in;
+}
+.num-btn ,
+.operator-btn{
+    width: 100%;
+    padding: 10px 0;
+    background:var(--White ) ;
+    color:var(--Very-desaturated-blue);
+    box-shadow: 0 5px 0 0 var(--Desaturated-dark-blue);
+    font-weight: 800;
+    font-size: 30px;
+    font-family: "League Spartan", serif;
+    border: none;
+}
+.num-btn:hover ,
+.operator-btn:hover{
+    background: var(--White);
+
+}
+.reset-btn{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    color:var(--White);
+}
+.equal-btn{
+    grid-column-start: 3;
+    grid-column-end:5;
+    font-size: 40px;
+    background: var(--Red);
+     border: none;
+    box-shadow: 0 5px 0 0 var(--Dark-red);
+    color:var(--White);
+
+}
+.equal-btn:hover{
+    background:var(--Dark-red) ;
+}
+.reset-btn ,
+.delet-btn{
+    font-size: 20px;
+    background: var(--Desaturated-dark-blue );
+    font-weight: 600;
+    color: var(--White);
+    box-shadow: 0 5px 0 0 var(--Desaturatedshadow-dark-blue);
+    border: none;
+}
+@media(max-width:480px){
+    .display{
+        padding: 24px;
+
+    }
+    .result{
+        font-size: 40px;
+    }
+    .keypad-container{
+        gap: 16px 12px;
+    }
+    .num-btn,.equal-btn{
+        font-size: 32px;
+        padding: 14px 0;
+    }
+    .reset-btn, .delet-btn{
+        font-size: 20px;
+    }
+}
